@@ -1,0 +1,17 @@
+---
+interface Props {
+	projectName: string
+}
+
+const { projectName } = Astro.props
+const current = new Date().getFullYear()
+
+// TODO: translate??
+---
+
+<footer>
+  <p class="flex-block max-w-xl p-4 md:pd-8 mx-auto text-center text-sm">
+    &copy; {current} {projectName} | <a href="https://astro.build/" target="_blank"></a>Powered by
+    Astro</a> 🚀
+  </p>
+</footer>
