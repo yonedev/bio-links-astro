@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string
+  url: string
+  target?: string
+  iconPack: String
+  iconName: String
+  iconColor?: String
+  size?: String
+}
+
+import { Icon } from 'astro-icon'
+
+// TODO: Color default en config
+
+const { title, url, target = '_blank', iconPack, iconName, iconColor = 'text-gray-600', size = 32 } = Astro.props
+
+const iconClass = `cursor-pointer text-gray-400 fill-current hover:${iconColor} cursor-pointer`
+---
+
+<a title={title} href={url} target={target}>
+  <Icon size={size} pack={iconPack} name={iconName} class={iconClass}/>
+</a>
+
+

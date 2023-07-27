@@ -1,8 +1,8 @@
 ---
 interface Props {
-	title: string
-	description: string
-	lang?: string
+  title: string
+  description: string
+  lang?: string
 }
 
 import BaseHead from '@components/BaseHead.astro'
@@ -11,18 +11,19 @@ import Footer from '@components/Footer.astro'
 import { getLangFromUrl } from '@i18n/utils'
 const { title, description, lang = getLangFromUrl(Astro.url) } = Astro.props
 ---
+
 <!DOCTYPE html>
 <html lang={lang}>
-	<BaseHead title={title} description={description} />
+  <BaseHead title={title} description={description} />
   <!-- TODO: Ver CSS para body => antialiased text-slate-400 bg-[#211F1F] 
   
   Originales: bg-white dark:bg-gray-900 pra modo oscuro-->
-	<body class="h-screen antialiased text-slate-400 bg-[#211F1F] ">
-		<slot />
+  <body class="h-screen antialiased text-slate-400 bg-[#211F1F]">
+    <slot />
     <!-- TODO: Poner switcher en el pie de página 
     <ThemeSwitch />
     -->
     <!-- TODO: traer projectName desde config-->
     <Footer projectName="Yonedev" />
-	</body>
+  </body>
 </html>

@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string
+  icon: string
+  url: string
+  target?: string
+  download?: string
+  isFirstElement?: Boolean
+  textColor?: String
+  textColorHover?: String
+}
+
+// TODO: Color default en config. Texto, fondo botón, border
+
+const {
+  title,
+  icon,
+  url,
+  target = '_blank',
+  download,
+  isFirstElement = false,
+  textColor = 'text-gray-600',
+  textColorHover = 'text-orange-800'
+} = Astro.props
+
+const containerClass = `bg-gray-100 border-b ${isFirstElement ? 'border-t ' : ''}border-gray-300`;
+const linkClass = `font-bold ${textColor} hover:${textColorHover} cursor-pointer`
+---
+
+<div class={containerClass}>
+  <a title={title} class={linkClass} href={url} target={target} download={download}>
+    <span class="px-4 py-5 w-full flex justify-between">
+      <span class="text-sm">{title}</span>
+      {icon}
+    </span>
+  </a>
+</div>
