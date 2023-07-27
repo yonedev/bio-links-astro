@@ -15,14 +15,8 @@ const { title, description, lang = getLangFromUrl(Astro.url) } = Astro.props
 <!DOCTYPE html>
 <html lang={lang}>
   <BaseHead title={title} description={description} />
-  <!-- TODO: Ver CSS para body => antialiased text-slate-400 bg-[#211F1F] 
-  
-  Originales: bg-white dark:bg-gray-900 pra modo oscuro-->
-  <body class="h-screen antialiased text-slate-400 bg-[#211F1F]">
+  <body class="h-screen antialiased text-slate-400 bg-[#211F1F] dark:bg-gray-900">
     <slot />
-    <!-- TODO: Poner switcher en el pie de página 
-    <ThemeSwitch />
-    -->
     <!-- TODO: traer projectName desde config-->
     <Footer projectName="Yonedev" />
   </body>
