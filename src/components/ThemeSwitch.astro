@@ -1,7 +1,12 @@
 ---
+interface Props {
+	title: string
+	description: string
+	useSystemDarkMode?: boolean
+}
 // https://github.com/natemoo-re/astro-icon#readme
 import { Icon } from 'astro-icon'
-
+const { useSystemDarkMode = true } = Astro.props
 ---
 
 <button id="themeToggle">
@@ -30,7 +35,7 @@ import { Icon } from 'astro-icon'
 		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
 			return localStorage.getItem('theme') || 'light'
 		}
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		if (useSystemDarkMode && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			return 'dark'
 		}
 		return 'light'
