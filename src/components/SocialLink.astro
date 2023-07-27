@@ -14,13 +14,21 @@ import { Icon } from 'astro-icon'
 
 // TODO: Color default en config
 
-const { title, url, target = '_blank', iconPack, iconName, iconColor = 'text-gray-600', size = 32 } = Astro.props
+const {
+  title,
+  url,
+  target = '_blank',
+  iconPack,
+  iconName,
+  iconColor = 'text-gray-600',
+  size = 32
+} = Astro.props
 
-const iconClass = `cursor-pointer text-gray-400 fill-current hover:${iconColor} cursor-pointer`
+const iconClass = `cursor-pointer text-gray-400 dark:text-neutral-300 fill-current hover:${iconColor} cursor-pointer`
+// const iconClass = `cursor-pointer text-gray-400 dark:text-neutral-300 fill-current hover:text-red-400 cursor-pointer`
+// console.log(iconClass)
 ---
 
-<a title={title} href={url} target={target}>
-  <Icon size={size} pack={iconPack} name={iconName} class={iconClass}/>
+<a title={title} href={url} target={target} class={iconClass}>
+  <Icon size={size} pack={iconPack} name={iconName} />
 </a>
-
-

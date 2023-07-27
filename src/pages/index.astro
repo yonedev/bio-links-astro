@@ -17,7 +17,7 @@ import Link from '@components/Link.astro'
   -->
 
   <div class="flex-block max-w-xl p-4 md:pd-8 mx-auto mt-4">
-    <div class="bg-white shadow overflow-hidden rounded-lg">
+    <div class="bg-white shadow overflow-hidden rounded-lg dark:bg-neutral-800">
       <div class="px-4 py-5 sm:px-6 flex flex-col items-center">
         <div class="rounded-full h-40 w-40 overflow-hidden">
           <img
@@ -26,28 +26,57 @@ import Link from '@components/Link.astro'
           />
         </div>
         <div class="text-center">
-          <h1 class="text-xl leading-6 font-bold text-gray-900 mt-4">Yoné Rocha</h1>
-          <h2 class="text-sm leading-6 text-gray-500 mt-2">@yonedev</h2>
+          <h1 class="text-xl leading-6 mt-4 font-bold text-gray-900 dark:text-neutral-50">
+            Yoné Rocha
+          </h1>
+          <h2 class="text-sm leading-6 text-gray-500 mt-2 dark:text-neutral-300">@yonedev</h2>
           <!-- TODO: Textos en config -->
-          <p class="mt-2 max-w-2xl text-sm text-gray-500">
+          <p class="mt-2 max-w-2xl text-sm text-gray-500 dark:text-neutral-400">
             Desarrollador de software freelance.<br />Creo software con pasión, ética, empatía y
             profesionalidad.<br />#ReactNative #Nuxt #Astro #Symfony #Docker
           </p>
         </div>
       </div>
-      <div class="border-t border-gray-200">
-        <div class="bg-gray-200 px-4 py-5 w-full flex justify-center">
+      <div class="border-t border-gray-200 dark:border-neutral-900">
+        <div class="bg-gray-200 px-4 py-5 w-full flex justify-center dark:bg-neutral-900">
           <div class="mt-1 text-sm text-gray-900">
-            <!--Creo firmemente en el poder transformador de la tecnología para
-              cambiar el mundo. Reconozco el valor de la innovación y la
-              creatividad como elementos clave para mejorar la calidad de vida
-              tanto de las personas como de las empresas.-->
             <div class="mt-1 mb-1 space-x-4 flex justify-center">
-              <SocialLink title="Linkedin" url="https://linkedin.yone.dev" iconColor="text-blue-500" iconPack="mdi" iconName="linkedin"/>
-              <SocialLink title="Instagram" url="https://instagram.yone.dev" iconColor="text-[#E4405F]" iconPack="mdi" iconName="instagram"/>
-              <SocialLink title="Facebook" url="https://facebook.yone.dev" iconColor="text-blue-900" iconPack="mdi" iconName="facebook"/>
-              <SocialLink title="Twitter" url="https://twitter.yone.dev" iconColor="text-blue-300" iconPack="mdi" iconName="twitter"/>
-              <SocialLink title="GitHub" url="https://github.yone.dev" iconColor="text-gray-900" iconPack="mdi" iconName="github"/>
+              <!-- TODO: iconColor para modo noche -->
+              <SocialLink
+                title="Linkedin"
+                url="https://linkedin.yone.dev"
+                iconColor="text-blue-500"
+                iconPack="mdi"
+                iconName="linkedin"
+              />
+              <SocialLink
+                title="Instagram"
+                url="https://instagram.yone.dev"
+                iconColor="text-[#E4405F]"
+                iconPack="mdi"
+                iconName="instagram"
+              />
+              <SocialLink
+                title="Facebook"
+                url="https://facebook.yone.dev"
+                iconColor="text-blue-900"
+                iconPack="mdi"
+                iconName="facebook"
+              />
+              <SocialLink
+                title="Twitter"
+                url="https://twitter.yone.dev"
+                iconColor="text-blue-300"
+                iconPack="mdi"
+                iconName="twitter"
+              />
+              <SocialLink
+                title="GitHub"
+                url="https://github.yone.dev"
+                iconColor="text-gray-900"
+                iconPack="mdi"
+                iconName="github"
+              />
             </div>
           </div>
         </div>

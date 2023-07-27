@@ -15,7 +15,9 @@ const { title, description, lang = getLangFromUrl(Astro.url) } = Astro.props
 <!DOCTYPE html>
 <html lang={lang}>
   <BaseHead title={title} description={description} />
-  <body class="h-screen antialiased text-slate-400 bg-[#211F1F] dark:bg-gray-900">
+  <body
+    class="h-screen antialiased text-slate-400 bg-[#211F1F] dark:bg-black dark:text-neutral-200"
+  >
     <slot />
     <!-- TODO: traer projectName desde config-->
     <Footer projectName="Yonedev" />
