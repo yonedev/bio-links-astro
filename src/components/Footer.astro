@@ -7,8 +7,6 @@ import ThemeSwitch from '@components/ThemeSwitch.astro'
 
 const { projectName } = Astro.props
 const current = new Date().getFullYear()
-
-// TODO: translate??
 ---
 
 <footer>
@@ -16,8 +14,7 @@ const current = new Date().getFullYear()
     &copy; {current}
     {projectName} | <a href="https://astro.build/" target="_blank">Powered by Astro</a>
   </p>
-  <div class="flex-block max-w-xl pb-2 md:pd-8 mx-auto text-center">
-    <!-- TODO: darkmode en config -->
+  <div class="flex-block max-w-xl pb-4 md:pd-8 mx-auto text-center text-sm">
     <ThemeSwitch useSystemDarkMode={false} />
   </div>
 </footer>
