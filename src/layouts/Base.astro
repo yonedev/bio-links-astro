@@ -1,7 +1,9 @@
 ---
+import type { Metadata } from '@utils/metadataInterface'
+
 interface Props {
-  title: string
-  description: string
+  siteName: string
+  metadata: Metadata
   lang?: string
 }
 
@@ -9,19 +11,19 @@ import BaseHead from '@components/BaseHead.astro'
 import Footer from '@components/Footer.astro'
 
 import { getLangFromUrl } from '@i18n/utils'
-const { title, description, lang = getLangFromUrl(Astro.url) } = Astro.props
+const { siteName, metadata, lang = getLangFromUrl(Astro.url) } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang={lang}>
-  <BaseHead title={title} description={description} />
+  <BaseHead metadata={metadata} />
   <body
     class="h-screen antialiased text-slate-400 bg-[#211F1F] dark:bg-black dark:text-neutral-200"
   >
     <canvas id="matrix-background" class="hidden dark:block"></canvas>
     <slot />
-    <!-- TODO: traer projectName desde config-->
-    <Footer projectName="Yonedev" />
+    <Footer siteName={siteName} />
+
     <style is:global>
       #matrix-background {
         width: 100%;

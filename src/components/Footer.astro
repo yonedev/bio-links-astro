@@ -1,18 +1,19 @@
 ---
 interface Props {
-  projectName: string
+  siteName: string
 }
 
 import ThemeSwitch from '@components/ThemeSwitch.astro'
 
-const { projectName } = Astro.props
+const { siteName } = Astro.props
 const current = new Date().getFullYear()
 ---
 
 <footer>
   <p class="flex-block max-w-xl p-4 md:pd-8 mx-auto text-center text-sm">
-    &copy; {current}
-    {projectName} | <a href="https://astro.build/" target="_blank">Powered by Astro</a>
+    &copy; {current}&nbsp;{siteName} | <a href="https://astro.build/" target="_blank"
+      >Powered by Astro</a
+    >
   </p>
   <div class="flex-block max-w-xl pb-4 md:pd-8 mx-auto text-center text-sm">
     <ThemeSwitch useSystemDarkMode={false} />
