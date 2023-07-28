@@ -6,6 +6,7 @@ interface Props {
   target?: string
   download?: string
   isFirstElement?: boolean
+  isLastElement?: boolean
   textColor?: string
   textColorHover?: string
   textColorHoverDark?: string
@@ -24,12 +25,13 @@ const {
   target = '_blank',
   download,
   isFirstElement = false,
+  isLastElement = false,
   textColor = 'text-gray-600',
   textColorHover = 'hover:text-orange-800',
   textColorHoverDark = 'dark:hover:text-orange-800'
 } = Astro.props
 
-const containerClass = `bg-gray-100 border-b ${
+const containerClass = `bg-gray-100 ${!isLastElement ? 'border-b ' : ''} ${
   isFirstElement ? 'border-t ' : ''
 }border-neutral-300 dark:bg-neutral-900 dark:border-neutral-600`
 const linkClass = `font-bold ${textColor} ${textColorHover} cursor-pointer dark:text-neutral-300 ${textColorHoverDark}`

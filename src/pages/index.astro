@@ -16,25 +16,45 @@ import Link from '@components/Link.astro'
   </div>#394144
   -->
 
-  <div class="flex-block max-w-xl p-4 md:pd-8 mx-auto mt-4">
+  <div class="flex-block max-w-xl p-4 md:pd-4 mx-auto mt-4 dark:mt-20 md:mt-4">
     <div class="bg-white shadow overflow-hidden rounded-lg dark:bg-neutral-900">
       <div class="px-4 py-5 sm:px-6 flex flex-col items-center">
         <div class="rounded-full h-40 w-40 overflow-hidden">
           <img
             src="https://res.cloudinary.com/dcllw95id/images/v1689339453/yonedev/yonedev_cuadrada/yonedev_cuadrada.jpg?_i=AA"
             alt="Yoné Rocha (Yonedev)"
+            class="dark:hidden"
+          />
+          <img
+            src="https://res.cloudinary.com/dcllw95id/images/v1690548455/yonedev/Yonedev_matrix/Yonedev_matrix.jpg?_i=AA"
+            alt="Yoné Rocha (Yonedev)"
+            class="hidden dark:block"
           />
         </div>
-        <div class="text-center">
+        <div class="text-center dark:text-center">
           <h1 class="text-xl leading-6 mt-4 font-bold text-gray-900 dark:text-neutral-50">
-            Yoné Rocha
+            <span class="dark:hidden">Yoné Rocha</span>
+            <span class="hidden dark:block">Yonedev</span>
           </h1>
-          <h2 class="text-sm leading-6 text-gray-500 mt-2 dark:text-neutral-300">@yonedev</h2>
+          <h2 class="text-sm leading-6 text-gray-500 mt-2 dark:text-neutral-300 dark:hidden">
+            @yonedev
+          </h2>
           <!-- TODO: Textos en config -->
 
-          <p class="mt-2 max-w-2xl text-sm text-gray-500 dark:text-neutral-400">
+          <p
+            class="mt-2 max-w-2xl text-sm leading-5 text-gray-500 dark:text-neutral-400 dark:hidden"
+          >
             Desarrollador de software freelance.<br />Creo software con pasión, ética, empatía y
             profesionalidad.<br />#ReactNative #Nuxt #Astro #Symfony #Docker
+          </p>
+
+          <p
+            class="mt-3 max-w-2xl text-sm leading-5 text-gray-500 dark:text-neutral-400 hidden dark:block"
+          >
+            Si tomas la pastilla azul, fin de la historia. Despertarás en tu cama y creerás lo que
+            quieras creerte. Si tomas la roja te quedarás en el país de las maravillas y yo te
+            enseñaré hasta donde llega la madriguera de conejos. Recuerda, lo único que te ofrezco
+            es la verdad, nada más.<br /><br />#ReactNative #Nuxt #Astro #Symfony #Docker
           </p>
         </div>
       </div>
@@ -143,6 +163,7 @@ import Link from '@components/Link.astro'
           textColor="text-rose-600"
           textColorHover="hover:text-rose-800"
           textColorHoverDark="dark:hover:text-green-800"
+          isLastElement={true}
         />
       </div>
     </div>
