@@ -1,6 +1,6 @@
 ---
 interface Props {
-	projectName: string
+  projectName: string
 }
 
 import ThemeSwitch from '@components/ThemeSwitch.astro'
@@ -13,12 +13,11 @@ const current = new Date().getFullYear()
 
 <footer>
   <p class="flex-block max-w-xl p-4 md:pd-8 mx-auto text-center text-sm">
-    &copy; {current} {projectName} | <a href="https://astro.build/" target="_blank">Powered by
-    Astro</a>
+    &copy; {current}
+    {projectName} | <a href="https://astro.build/" target="_blank">Powered by Astro</a>
   </p>
-  <div class="flex-block max-w-xl pb-4  md:pd-8 mx-auto text-center">
+  <div class="flex-block max-w-xl pb-2 md:pd-8 mx-auto text-center">
     <!-- TODO: darkmode en config -->
-    <ThemeSwitch useSystemDarkMode={false}/>
+    <ThemeSwitch useSystemDarkMode={false} />
   </div>
- 
 </footer>
