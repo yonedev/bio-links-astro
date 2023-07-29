@@ -26,3 +26,49 @@ content:
   bio: 'Desarrollador de software freelance.<br />Creo software con pasión, ética, empatía y profesionalidad.<br />#ReactNative #Nuxt #Astro #Symfony #Docker'
   bioDarkMode: 'Si tomas la pastilla azul, fin de la historia. Despertarás en tu cama y creerás lo que quieras creerte. Si tomas la roja te quedarás en el país de las maravillas y yo te enseñaré hasta donde llega la madriguera de conejos. Recuerda, lo único que te ofrezco es la verdad, nada más.<br /><br />#ReactNative #Nuxt #Astro #Symfony #Docker'
 
+socialLinks:
+  - title: Linkedin
+    url: '#'
+    iconHoverColor: "hover:text-blue-500"
+    iconHoverColorDark: "dark:hover:text-green-800"
+    iconPack: mdi
+    iconName: linkedin
+
+  - title: Instagram
+    url: '#'
+    iconHoverColor: "hover:text-[#E4405F]"
+    iconHoverColorDark: "dark:hover:text-green-800"
+    iconPack: mdi
+    iconName: instagram
+
+  - title: Facebook
+    url: '#'
+    iconHoverColor: "hover:text-blue-900"
+    iconHoverColorDark: "dark:hover:text-green-800"
+    iconPack: mdi
+    iconName: facebook
+
+  - title: Twitter
+    url: '#'
+    iconHoverColor: "hover:text-blue-300"
+    iconHoverColorDark: "dark:hover:text-green-800"
+    iconPack: mdi
+    iconName: twitter
+
+  - title: GitHub
+    url: '#'
+    iconHoverColor: "hover:text-gray-900"
+    iconHoverColorDark: "dark:hover:text-green-800"
+    iconPack: mdi
+    iconName: github
+
+links:
+  - title: 'Un enlace'
+    url: '#'
+    icon: 'mdi:web'
+    # textColor: 'text-rose-600'
+    # textColorHover: 'hover:text-rose-800'
+    textColorHoverDark: 'dark:hover:text-green-800'
+    isFirstElement: true
+    isLastElement: false
+  

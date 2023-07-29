@@ -1,4 +1,5 @@
 ---
+import type { SocialLinkType, LinkType } from '@utils/Interfaces'
 import Base from '@layouts/Base.astro'
 import SocialLink from '@components/SocialLink.astro'
 import Link from '@components/Link.astro'
@@ -22,6 +23,7 @@ import conf from '@config'
             <span class="dark:hidden">{conf.content.title}</span>
             <span class="hidden dark:block">{conf.content.titleDarkMode}</span>
           </h1>
+          <!-- TODO: Si no existe o es vacío que no aparezca esta opción e igual para la bio -->
           <h2 class="text-sm leading-6 text-gray-500 mt-2 dark:text-neutral-300 dark:hidden">
             {conf.content.subtitle}
           </h2>
@@ -40,109 +42,36 @@ import conf from '@config'
         <div class="bg-gray-200 px-4 py-5 w-full flex justify-center dark:bg-neutral-800">
           <div class="mt-1 text-sm text-gray-900">
             <div class="mt-1 mb-1 space-x-4 flex justify-center">
-              <SocialLink
-                title="Linkedin"
-                url="https://linkedin.yone.dev"
-                iconHoverColor="hover:text-blue-500"
-                iconHoverColorDark="dark:hover:text-green-800"
-                iconPack="mdi"
-                iconName="linkedin"
-              />
-              <SocialLink
-                title="Instagram"
-                url="https://instagram.yone.dev"
-                iconHoverColor="hover:text-[#E4405F]"
-                iconHoverColorDark="dark:hover:text-green-800"
-                iconPack="mdi"
-                iconName="instagram"
-              />
-              <SocialLink
-                title="Facebook"
-                url="https://facebook.yone.dev"
-                iconHoverColor="hover:text-blue-900"
-                iconHoverColorDark="dark:hover:text-green-800"
-                iconPack="mdi"
-                iconName="facebook"
-              />
-              <SocialLink
-                title="Twitter"
-                url="https://twitter.yone.dev"
-                iconHoverColor="hover:text-blue-300"
-                iconHoverColorDark="dark:hover:text-green-800"
-                iconPack="mdi"
-                iconName="twitter"
-              />
-              <SocialLink
-                title="GitHub"
-                url="https://github.yone.dev"
-                iconHoverColor="hover:text-gray-900"
-                iconHoverColorDark="dark:hover:text-green-800"
-                iconPack="mdi"
-                iconName="github"
-              />
+              {
+                conf.socialLinks.map((item: SocialLinkType) => (
+                  <SocialLink
+                    title={item?.title}
+                    url={item?.url}
+                    iconHoverColor={item?.iconHoverColor}
+                    iconHoverColorDark={item?.iconHoverColorDark}
+                    iconPack={item?.iconPack}
+                    iconName={item?.iconName}
+                  />
+                ))
+              }
             </div>
           </div>
         </div>
 
-        <Link
-          title="Visita mi web"
-          icon="mdi:web"
-          url="https://yone.dev/"
-          isFirstElement={true}
-          textColorHoverDark="dark:hover:text-green-800"
-        />
-        <Link
-          title="Último artículo que he escrito"
-          icon="mdi:typewriter"
-          url="https://yone.dev/8k1s"
-          textColorHoverDark="dark:hover:text-green-800"
-        />
-        <Link
-          title="Fragmentos de código"
-          icon="mdi:laptop"
-          url="https://yone.dev/snippets/"
-          textColorHoverDark="dark:hover:text-green-800"
-        />
-        <Link
-          title="Tijarafe, desde donde trabajo"
-          icon="mdi:island"
-          url="https://yone.dev/desde-donde/"
-          textColorHoverDark="dark:hover:text-green-800"
-        />
-        <Link
-          title="Conectemos en Linkedin"
-          icon="mdi:linkedin"
-          url="https://linkedin.yone.dev/"
-          textColor="text-blue-600"
-          textColorHover="hover:text-blue-800"
-          textColorHoverDark="dark:hover:text-green-800"
-        />
-        <Link
-          title="¡Escríbeme un correo!"
-          icon="mdi:email"
-          url="mailto:hi@yone.dev"
-          textColor="text-orange-600"
-          textColorHover="hover:text-orange-800"
-          textColorHoverDark="dark:hover:text-green-800"
-        />
-        <Link
-          title="¡Hablemos por whatsapp!"
-          icon="mdi:whatsapp"
-          url="https://whatsapp.yone.dev/"
-          textColor="text-lime-600"
-          textColorHover="hover:text-lime-800"
-          textColorHoverDark="dark:hover:text-green-800"
-        />
-        <Link
-          title="Guarda mi contacto"
-          icon="mdi:cellphone-arrow-down"
-          url="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AYon%C3%A9%20Rocha%0AN%3ARocha%3BYon%C3%A9%3B%3B%0AORG%3AYonedev%0ATEL%3BTYPE%3DCELL%3A%2B34610353078%0AEMAIL%3BTYPE%3DPREF%2CINTERNET%3Ahi%40yone.dev%0AEND%3AVCARD"
-          download="yonedev.vcf"
-          textColor="text-rose-600"
-          textColorHover="hover:text-rose-800"
-          textColorHoverDark="dark:hover:text-green-800"
-          isLastElement={true}
-        />
+        {
+          conf.links.map((item: LinkType) => (
+            <Link
+              title={item?.title}
+              url={item?.url}
+              icon={item?.icon}
+              textColor={item?.textColor}
+              textColorHover={item?.textColorHover}
+              textColorHoverDark={item?.textColorHoverDark}
+              isFirstElement={item?.isFirstElement}
+            />
+          ))
+        }
+        <!-- TODO: separar pack e icon como en SocialLink -->
       </div>
     </div>
   </div>
