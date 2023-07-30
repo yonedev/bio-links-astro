@@ -4,6 +4,13 @@ import Base from '@layouts/Base.astro'
 import SocialLink from '@components/SocialLink.astro'
 import Link from '@components/Link.astro'
 import content from '@content'
+
+// Estilos condicionales a que exista contenido diferente en Dark Mode
+const avatarCss = content.body.avatarDarkMode ? 'dark:hidden' : ''
+const titleCss = content.body.titleDarkMode ? 'dark:hidden' : ''
+const bioCss =
+  'mt-2 max-w-2xl text-sm leading-5 text-gray-500 dark:text-neutral-400 ' +
+  (content.body.bioDarkMode ? 'dark:hidden' : '')
 ---
 
 <Base siteName={content.site.name} metadata={content.metadata} footerData={content.body.footer}>
@@ -11,7 +18,7 @@ import content from '@content'
     <div class="bg-white shadow overflow-hidden rounded-lg dark:bg-neutral-900">
       <div class="px-4 py-5 sm:px-6 flex flex-col items-center">
         <div class="rounded-full h-40 w-40 overflow-hidden">
-          <img src={content.body.avatar} alt={content.metadata.title} class="dark:hidden" />
+          <img src={content.body.avatar} alt={content.metadata.title} class={avatarCss} />
           {
             content.body.avatarDarkMode && (
               <img
@@ -24,7 +31,7 @@ import content from '@content'
         </div>
         <div class="text-center dark:text-center">
           <h1 class="text-xl leading-6 mt-4 font-bold text-gray-900 dark:text-neutral-50">
-            <span class="dark:hidden">{content.body.title}</span>
+            <span class={titleCss}>{content.body.title}</span>
             {
               content.body.titleDarkMode && (
                 <span class="hidden dark:block">{content.body.titleDarkMode}</span>
@@ -39,14 +46,7 @@ import content from '@content'
             )
           }
 
-          {
-            content.body.bio && (
-              <p
-                class="mt-2 max-w-2xl text-sm leading-5 text-gray-500 dark:text-neutral-400 dark:hidden"
-                set:html={content.body.bio}
-              />
-            )
-          }
+          {content.body.bio && <p class={bioCss} set:html={content.body.bio} />}
 
           {
             content.body.bioDarkMode && (

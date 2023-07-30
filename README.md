@@ -1,8 +1,8 @@
 ![links.yone.dev](https://res.cloudinary.com/dcllw95id/images/v1689187983/yonedev/Yonedev-Github/Yonedev-Github.png?_i=AA)
 
-# links.yone.dev (Versión Astro)
+# Bio Links Astro
 
-Una versión DIY de Linktree, realizada con el framework Astro, para compartir redes sociales y otros enlaces de interés de mi marca personal
+Una versión DIY de Linktree, realizada con el framework Astro, para compartir redes sociales y otros enlaces de interés de mi marca personal. Eres libre de usar este repositorio para aprender o para realizar un fork y hacer tu propia versión de Bio Links Astro
 
 <p>
    <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Astro&color=FF5D01&logo=Astro&logoColor=FFFFFF&label=" />&nbsp;&nbsp;
@@ -11,11 +11,11 @@ Una versión DIY de Linktree, realizada con el framework Astro, para compartir r
 
 ## 🆕 Configuración inicial para desplegar un proyecto
 
-- Realizar un fork del repositositorio. Eres libre de usarlo para aprender o para ponerlo en producción
-- Duplicar el archivo ./src/config/content.yml.sample como ./src/config/content.yml y editar el contenido según se deseé.
-- Duplicar el archivo ./.env.sample como ./.env y editar las variables de entorno.
+- Realizar un fork del repositositorio.
+- Duplicar el archivo ./src/config/content.yml.sample y renombrar a ./src/config/content.yml. Desde aquí podrás editar todo el contenido del sitio web.
+- Duplicar el archivo ./.env.sample y renombrar a ./.env. Hay unas cuantas variables de entorno para configurar tu proyecto
 - Editar los datos de ./public/manifest.json
-- Personalizar los favicon que están en ./public/favicon
+- Personalizar los favicon que están en ./public/favicon/
 
 ## 🧞 Comandos
 
@@ -27,3 +27,8 @@ Una versión DIY de Linktree, realizada con el framework Astro, para compartir r
 | `npm run preview`         | Preview en local antes de desplegar  |
 | `npm run astro ...`       | Astro CLI `astro add`, `astro check` |
 | `npm run astro -- --help` | Ayuda Astro CLI                      |
+
+## ⚠️ TODO para futuras versiones
+
+- Los enlaces se podrán alimentar desde una base de datos para facilitar la edición de personal no técnico.
+- Integración con Custom Post Type de Wordpress.

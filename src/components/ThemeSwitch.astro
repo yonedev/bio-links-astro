@@ -4,9 +4,10 @@ import { Icon } from 'astro-icon'
 import content from '@content'
 
 const themeSwitch = content.body.themeSwitch
+const containerClass = `flex items-center mx-auto ${themeSwitch.iconHoverColor}`
 ---
 
-<button id="themeToggle" class="flex items-center mx-auto hover:text-green-800">
+<button id="themeToggle" class={containerClass}>
   <Icon class="sun" name={themeSwitch.iconDarkMode} size={30} />
   {themeSwitch.buttonTextDarkMode && <span class="sun ml-2">{themeSwitch.buttonTextDarkMode}</span>}
   <Icon class="moon" name={themeSwitch.iconLightMode} size={30} />
