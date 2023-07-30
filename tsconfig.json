@@ -9,7 +9,7 @@
       "@layouts/*": ["src/layouts/*"],
       "@i18n/*": ["src/i18n/*"],
       "@utils/*": ["src/utils/*"],
-      "@config": ["src/config.yml"]
+      "@content": ["src/config/content.yml"]
     }
   }
 }

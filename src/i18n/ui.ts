@@ -1,5 +1,3 @@
-import conf from '@config'
-
 export const languages = {
   en: 'English',
   es: 'Español'

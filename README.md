@@ -12,7 +12,7 @@ Una versión DIY de Linktree, realizada con el framework Astro, para compartir r
 ## 🆕 Configuración inicial para desplegar un proyecto
 
 - Realizar un fork del repositositorio. Eres libre de usarlo para aprender o para ponerlo en producción
-- Duplicar el archivo ./src/config.yml.sample como ./src/config.yml y editar el contenido según se deseé.
+- Duplicar el archivo ./src/config/content.yml.sample como ./src/config/content.yml y editar el contenido según se deseé.
 - Duplicar el archivo ./.env.sample como ./.env y editar las variables de entorno.
 - Editar los datos de ./public/manifest.json
 - Personalizar los favicon que están en ./public/favicon

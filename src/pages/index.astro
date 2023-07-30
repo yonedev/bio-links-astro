@@ -3,20 +3,20 @@ import type { SocialLinkType, LinkType } from '@utils/Interfaces'
 import Base from '@layouts/Base.astro'
 import SocialLink from '@components/SocialLink.astro'
 import Link from '@components/Link.astro'
-import conf from '@config'
+import content from '@content'
 ---
 
-<Base siteName={conf.site.name} metadata={conf.metadata} footerData={conf.content.footer}>
+<Base siteName={content.site.name} metadata={content.metadata} footerData={content.body.footer}>
   <div class="flex-block max-w-xl p-4 md:pd-4 mx-auto mt-4 dark:mt-20 md:mt-4">
     <div class="bg-white shadow overflow-hidden rounded-lg dark:bg-neutral-900">
       <div class="px-4 py-5 sm:px-6 flex flex-col items-center">
         <div class="rounded-full h-40 w-40 overflow-hidden">
-          <img src={conf.content.avatar} alt={conf.metadata.title} class="dark:hidden" />
+          <img src={content.body.avatar} alt={content.metadata.title} class="dark:hidden" />
           {
-            conf.content.avatarDarkMode && (
+            content.body.avatarDarkMode && (
               <img
-                src={conf.content.avatarDarkMode}
-                alt={conf.metadata.title}
+                src={content.body.avatarDarkMode}
+                alt={content.metadata.title}
                 class="hidden dark:block"
               />
             )
@@ -24,35 +24,35 @@ import conf from '@config'
         </div>
         <div class="text-center dark:text-center">
           <h1 class="text-xl leading-6 mt-4 font-bold text-gray-900 dark:text-neutral-50">
-            <span class="dark:hidden">{conf.content.title}</span>
+            <span class="dark:hidden">{content.body.title}</span>
             {
-              conf.content.titleDarkMode && (
-                <span class="hidden dark:block">{conf.content.titleDarkMode}</span>
+              content.body.titleDarkMode && (
+                <span class="hidden dark:block">{content.body.titleDarkMode}</span>
               )
             }
           </h1>
           {
-            conf.content.subtitle && (
+            content.body.subtitle && (
               <h2 class="text-sm leading-6 text-gray-500 mt-2 dark:text-neutral-300 dark:hidden">
-                {conf.content.subtitle}
+                {content.body.subtitle}
               </h2>
             )
           }
 
           {
-            conf.content.bio && (
+            content.body.bio && (
               <p
                 class="mt-2 max-w-2xl text-sm leading-5 text-gray-500 dark:text-neutral-400 dark:hidden"
-                set:html={conf.content.bio}
+                set:html={content.body.bio}
               />
             )
           }
 
           {
-            conf.content.bioDarkMode && (
+            content.body.bioDarkMode && (
               <p
                 class="mt-3 max-w-2xl text-sm leading-5 text-gray-500 dark:text-neutral-400 hidden dark:block"
-                set:html={conf.content.bioDarkMode}
+                set:html={content.body.bioDarkMode}
               />
             )
           }
@@ -63,7 +63,7 @@ import conf from '@config'
           <div class="mt-1 text-sm text-gray-900">
             <div class="mt-1 mb-1 space-x-4 flex justify-center">
               {
-                conf.socialLinks.map((item: SocialLinkType) => (
+                content.socialLinks.map((item: SocialLinkType) => (
                   <SocialLink
                     title={item?.title}
                     url={item?.url}
@@ -79,7 +79,7 @@ import conf from '@config'
         </div>
 
         {
-          conf.links.map((item: LinkType) => (
+          content.links.map((item: LinkType) => (
             <Link
               title={item?.title}
               url={item?.url}
@@ -89,6 +89,8 @@ import conf from '@config'
               textColorHover={item?.textColorHover}
               textColorHoverDark={item?.textColorHoverDark}
               isFirstElement={item?.isFirstElement}
+              isLastElement={item?.isLastElement}
+              download={item?.download}
             />
           ))
         }

@@ -1,16 +1,20 @@
 ---
 // https://github.com/natemoo-re/astro-icon#readme
 import { Icon } from 'astro-icon'
-import conf from '@config'
+import content from '@content'
 
-const content = conf.content.themeSwitch
+const themeSwitch = content.body.themeSwitch
 ---
 
 <button id="themeToggle" class="flex items-center mx-auto hover:text-green-800">
-  <Icon class="sun" name={content.iconDarkMode} size={30} />
-  {content.buttonTextDarkMode && <span class="sun ml-2">{content.buttonTextDarkMode}</span>}
-  <Icon class="moon" name={content.iconLightMode} size={30} />
-  {content.buttonTextLightMode && <span class="moon ml-2">{content.buttonTextLightMode}</span>}
+  <Icon class="sun" name={themeSwitch.iconDarkMode} size={30} />
+  {themeSwitch.buttonTextDarkMode && <span class="sun ml-2">{themeSwitch.buttonTextDarkMode}</span>}
+  <Icon class="moon" name={themeSwitch.iconLightMode} size={30} />
+  {
+    themeSwitch.buttonTextLightMode && (
+      <span class="moon ml-2">{themeSwitch.buttonTextLightMode}</span>
+    )
+  }
 </button>
 
 <style>
@@ -29,15 +33,18 @@ const content = conf.content.themeSwitch
 </style>
 
 <script>
-  import conf from '@config'
-  const content = conf.content.ThemeSwitch
+  import content from '@content'
+  const themeSwitch = content.body.ThemeSwitch
 
   // Script se ejecuta al inicio de la carga de página poniendo el modo que corresponda
   const theme = (() => {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
       return localStorage.getItem('theme') || 'light'
     }
-    if (content.useSystemDarkMode && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (
+      themeSwitch.useSystemDarkMode &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
       return 'dark'
     }
     return 'light'
