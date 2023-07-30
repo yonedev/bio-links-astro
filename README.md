@@ -27,3 +27,8 @@ Una versión DIY de Linktree, realizada con el framework Astro, para compartir r
 | `npm run preview`         | Preview en local antes de desplegar  |
 | `npm run astro ...`       | Astro CLI `astro add`, `astro check` |
 | `npm run astro -- --help` | Ayuda Astro CLI                      |
+
+## ⚠️ TODO para futuras versiones
+
+- Los enlaces se podrán alimentar desde una base de datos para facilitar la edición de personal no técnico.
+- Integración con Custom Post Type de Wordpress.

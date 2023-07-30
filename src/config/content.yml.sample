@@ -1,37 +1,37 @@
 site:
-  name: Yonedev
+  name: Lorem ipsum
 
 # Default SEO metadata
 metadata:
-  title: Yoné Rocha aka Yonedev
-  description: "Desarrollador de software freelance, #ReactNative #Nuxt #Astro #Symfony #Docker."
+  title: Lorem ipsum dolor sit amet
+  description: "Fusce eu tristique lectus, nec egestas eros. Etiam quis ex vel elit dignissim luctus vel eu est."
   tileColor: '#DB7B30'
   themeColor: '#ffffff'
   openGraph:
     type: website
     locale: es_ES
-    image: https://res.cloudinary.com/dcllw95id/images/v1689332981/yonedev/yonedev_portada_twitter_2023_links/yonedev_portada_twitter_2023_links.jpg?_i=AA
+    image: https://via.placeholder.com/1200x630
   twitter:
     cardType: summary_large_image
-    site: '@yonedev'
-    image: https://res.cloudinary.com/dcllw95id/images/v1689332981/yonedev/yonedev_portada_twitter_2023_links/yonedev_portada_twitter_2023_links.jpg?_i=AA
+    site: '@lorem_ipsum'
+    image: https://via.placeholder.com/1200x630
 
 #
 # Los elementos marcados como 'Opcional' se pueden dejar sin valor y se omitirán en el código HTML de la página
 #
 body:
-  avatar: 'https://res.cloudinary.com/dcllw95id/images/v1689339453/yonedev/yonedev_cuadrada/yonedev_cuadrada.jpg?_i=AA'
+  avatar: 'https://via.placeholder.com/1024x1024'
   # Opcional
-  avatarDarkMode: 'https://res.cloudinary.com/dcllw95id/images/v1690548455/yonedev/Yonedev_matrix/Yonedev_matrix.jpg?_i=AA'
-  title: Yoné Rocha
+  avatarDarkMode: 
+  title: Lorem ipsum
   # Opcional
-  titleDarkMode: Yonedev
+  titleDarkMode:
   # Opcional
-  subtitle: '@yonedev'
+  subtitle: '@lorem_ipsum'
   # Opcional
-  bio: 'Desarrollador de software freelance.<br />Creo software con pasión, ética, empatía y profesionalidad.<br />#ReactNative #Nuxt #Astro #Symfony #Docker'
+  bio: 'Fusce eu tristique lectus, nec egestas eros. Etiam quis ex vel elit dignissim luctus vel eu est.'
   # Opcional
-  bioDarkMode: 'Si tomas la pastilla azul, fin de la historia. Despertarás en tu cama y creerás lo que quieras creerte. Si tomas la roja te quedarás en el país de las maravillas y yo te enseñaré hasta donde llega la madriguera de conejos. Recuerda, lo único que te ofrezco es la verdad, nada más.<br /><br />#ReactNative #Nuxt #Astro #Symfony #Docker'
+  bioDarkMode:
   footer:
     # Opcional
     creditLink: https://astro.build/
@@ -41,45 +41,46 @@ body:
     useSystemDarkMode: true
     iconLightMode: 'ph:sun-fill'
     iconDarkMode: 'ph:moon-fill'
+    iconHoverColor: 'hover:text-gray-900'
     # Opcional
     buttonTextLightMode:
     # Opcional
     buttonTextDarkMode:
 
-# Referencia para buscar iconos: https://icon-sets.iconify.design/mdi/
+# Referencia para los iconos: https://icon-sets.iconify.design/mdi/
 socialLinks:
   - title: Linkedin
     url: '#'
     iconHoverColor: "hover:text-blue-500"
-    iconHoverColorDark: "dark:hover:text-green-800"
+    iconHoverColorDark: "dark:hover:text-blue-500"
     iconPack: mdi
     iconName: linkedin
 
   - title: Instagram
     url: '#'
     iconHoverColor: "hover:text-[#E4405F]"
-    iconHoverColorDark: "dark:hover:text-green-800"
+    iconHoverColorDark: "dark:hover:text-[#E4405F]"
     iconPack: mdi
     iconName: instagram
 
   - title: Facebook
     url: '#'
     iconHoverColor: "hover:text-blue-900"
-    iconHoverColorDark: "dark:hover:text-green-800"
+    iconHoverColorDark: "dark:hover:text-blue-900"
     iconPack: mdi
     iconName: facebook
 
   - title: Twitter
     url: '#'
     iconHoverColor: "hover:text-blue-300"
-    iconHoverColorDark: "dark:hover:text-green-800"
+    iconHoverColorDark: "dark:hover:text-blue-300"
     iconPack: mdi
     iconName: twitter
 
   - title: GitHub
     url: '#'
     iconHoverColor: "hover:text-gray-900"
-    iconHoverColorDark: "dark:hover:text-green-800"
+    iconHoverColorDark: "dark:hover:text-gray-900"
     iconPack: mdi
     iconName: github
 
@@ -90,7 +91,7 @@ links:
     iconName: web
     # textColor: 'text-rose-600'
     # textColorHover: 'hover:text-rose-800'
-    textColorHoverDark: 'dark:hover:text-green-800'
+    textColorHoverDark: 'dark:hover:text-rose-800'
     isFirstElement: true
     isLastElement: false
   
