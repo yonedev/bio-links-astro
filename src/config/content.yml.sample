@@ -1,0 +1,97 @@
+site:
+  name: Lorem ipsum
+
+# Default SEO metadata
+metadata:
+  title: Lorem ipsum dolor sit amet
+  description: "Fusce eu tristique lectus, nec egestas eros. Etiam quis ex vel elit dignissim luctus vel eu est."
+  tileColor: '#DB7B30'
+  themeColor: '#ffffff'
+  openGraph:
+    type: website
+    locale: es_ES
+    image: https://via.placeholder.com/1200x630
+  twitter:
+    cardType: summary_large_image
+    site: '@lorem_ipsum'
+    image: https://via.placeholder.com/1200x630
+
+#
+# Los elementos marcados como 'Opcional' se pueden dejar sin valor y se omitirán en el código HTML de la página
+#
+body:
+  avatar: 'https://via.placeholder.com/1024x1024'
+  # Opcional
+  avatarDarkMode: 
+  title: Lorem ipsum
+  # Opcional
+  titleDarkMode:
+  # Opcional
+  subtitle: '@lorem_ipsum'
+  # Opcional
+  bio: 'Fusce eu tristique lectus, nec egestas eros. Etiam quis ex vel elit dignissim luctus vel eu est.'
+  # Opcional
+  bioDarkMode:
+  footer:
+    # Opcional
+    creditLink: https://astro.build/
+    # Opcional
+    creditText: Powered by Astro
+  themeSwitch:
+    useSystemDarkMode: true
+    iconLightMode: 'ph:sun-fill'
+    iconDarkMode: 'ph:moon-fill'
+    iconHoverColor: 'hover:text-gray-900'
+    # Opcional
+    buttonTextLightMode:
+    # Opcional
+    buttonTextDarkMode:
+
+# Referencia para los iconos: https://icon-sets.iconify.design/mdi/
+socialLinks:
+  - title: Linkedin
+    url: '#'
+    iconHoverColor: "hover:text-blue-500"
+    iconHoverColorDark: "dark:hover:text-blue-500"
+    iconPack: mdi
+    iconName: linkedin
+
+  - title: Instagram
+    url: '#'
+    iconHoverColor: "hover:text-[#E4405F]"
+    iconHoverColorDark: "dark:hover:text-[#E4405F]"
+    iconPack: mdi
+    iconName: instagram
+
+  - title: Facebook
+    url: '#'
+    iconHoverColor: "hover:text-blue-900"
+    iconHoverColorDark: "dark:hover:text-blue-900"
+    iconPack: mdi
+    iconName: facebook
+
+  - title: Twitter
+    url: '#'
+    iconHoverColor: "hover:text-blue-300"
+    iconHoverColorDark: "dark:hover:text-blue-300"
+    iconPack: mdi
+    iconName: twitter
+
+  - title: GitHub
+    url: '#'
+    iconHoverColor: "hover:text-gray-900"
+    iconHoverColorDark: "dark:hover:text-gray-900"
+    iconPack: mdi
+    iconName: github
+
+links:
+  - title: 'Un enlace'
+    url: '#'
+    iconPack: mdi
+    iconName: web
+    # textColor: 'text-rose-600'
+    # textColorHover: 'hover:text-rose-800'
+    textColorHoverDark: 'dark:hover:text-rose-800'
+    isFirstElement: true
+    isLastElement: false
+  

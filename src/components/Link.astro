@@ -1,0 +1,47 @@
+---
+interface Props {
+  title: string
+  url: string
+  target?: string
+  iconPack: string
+  iconName: string
+  download?: string
+  isFirstElement?: boolean
+  isLastElement?: boolean
+  textColor?: string
+  textColorHover?: string
+  textColorHoverDark?: string
+}
+
+// https://github.com/natemoo-re/astro-icon#readme
+// https://icon-sets.iconify.design/mdi/whatsapp/
+import { Icon } from 'astro-icon'
+
+const {
+  title,
+  url,
+  target = '_blank',
+  iconPack,
+  iconName,
+  download,
+  isFirstElement = false,
+  isLastElement = false,
+  textColor = 'text-gray-600',
+  textColorHover = 'hover:text-orange-800',
+  textColorHoverDark = 'dark:hover:text-orange-800'
+} = Astro.props
+
+const containerClass = `bg-gray-100 ${!isLastElement ? 'border-b ' : ''} ${
+  isFirstElement ? 'border-t ' : ''
+} border-neutral-300 dark:bg-neutral-900 dark:border-neutral-600`
+const linkClass = `font-bold ${textColor} ${textColorHover} cursor-pointer dark:text-neutral-300 ${textColorHoverDark}`
+---
+
+<div class={containerClass}>
+  <a title={title} class={linkClass} href={url} target={target} download={download}>
+    <span class="px-4 py-5 w-full flex justify-between">
+      <span class="text-sm">{title}</span>
+      <Icon size={30} pack={iconPack} name={iconName} />
+    </span>
+  </a>
+</div>
