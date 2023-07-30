@@ -93,8 +93,10 @@ const { siteName, metadata, footerData, lang = getLangFromUrl(Astro.url) } = Ast
         // JavaScript para ajustar el tamaño del canvas al tamaño de toda la página
         function resizeCanvas() {
           const canvas = document.getElementById('c')
-          canvas.width = window.innerWidth
-          canvas.height = document.documentElement.clientHeight
+          if (canvas) {
+            canvas.width = window.innerWidth
+            canvas.height = document.documentElement.clientHeight
+          }
         }
 
         window.addEventListener('resize', resizeCanvas)
