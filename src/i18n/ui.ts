@@ -5,7 +5,7 @@ export const languages = {
   es: 'Español'
 }
 
-export const defaultLang = conf.site.defaultLang
+export const defaultLang = import.meta.env.DEFAULT_LANG
 
 export const ui = {
   en: {

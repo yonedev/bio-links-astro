@@ -1,7 +1,5 @@
 site:
   name: Yonedev
-  url: 'https://localhost:3000'
-  defaultLang: 'es'
 
 # Default SEO metadata
 metadata:
