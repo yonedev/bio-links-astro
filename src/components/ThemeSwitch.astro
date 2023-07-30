@@ -1,16 +1,16 @@
 ---
-interface Props {
-  useSystemDarkMode?: boolean
-}
 // https://github.com/natemoo-re/astro-icon#readme
 import { Icon } from 'astro-icon'
-const { useSystemDarkMode = true } = Astro.props
+import conf from '@config'
+
+const content = conf.content.themeSwitch
 ---
 
 <button id="themeToggle" class="flex items-center mx-auto hover:text-green-800">
-  <Icon class="sun" name="mdi:code" size={30} />
-  <span class="sun ml-2">Enter the Matrix</span>
-  <Icon class="moon" name="ph:sun-fill" size={30} />
+  <Icon class="sun" name={content.iconDarkMode} size={30} />
+  {content.buttonTextDarkMode && <span class="sun ml-2">{content.buttonTextDarkMode}</span>}
+  <Icon class="moon" name={content.iconLightMode} size={30} />
+  {content.buttonTextLightMode && <span class="moon ml-2">{content.buttonTextLightMode}</span>}
 </button>
 
 <style>
@@ -29,12 +29,15 @@ const { useSystemDarkMode = true } = Astro.props
 </style>
 
 <script>
+  import conf from '@config'
+  const content = conf.content.ThemeSwitch
+
   // Script se ejecuta al inicio de la carga de página poniendo el modo que corresponda
   const theme = (() => {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
       return localStorage.getItem('theme') || 'light'
     }
-    if (useSystemDarkMode && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (content.useSystemDarkMode && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark'
     }
     return 'light'

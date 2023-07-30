@@ -1,9 +1,10 @@
 ---
 interface Props {
   title: string
-  icon: string
   url: string
   target?: string
+  iconPack: string
+  iconName: string
   download?: string
   isFirstElement?: boolean
   isLastElement?: boolean
@@ -16,13 +17,12 @@ interface Props {
 // https://icon-sets.iconify.design/mdi/whatsapp/
 import { Icon } from 'astro-icon'
 
-// TODO: Color default en config. Texto, fondo botón, border
-
 const {
   title,
-  icon,
   url,
   target = '_blank',
+  iconPack,
+  iconName,
   download,
   isFirstElement = false,
   isLastElement = false,
@@ -33,7 +33,7 @@ const {
 
 const containerClass = `bg-gray-100 ${!isLastElement ? 'border-b ' : ''} ${
   isFirstElement ? 'border-t ' : ''
-}border-neutral-300 dark:bg-neutral-900 dark:border-neutral-600`
+} border-neutral-300 dark:bg-neutral-900 dark:border-neutral-600`
 const linkClass = `font-bold ${textColor} ${textColorHover} cursor-pointer dark:text-neutral-300 ${textColorHoverDark}`
 ---
 
@@ -41,7 +41,7 @@ const linkClass = `font-bold ${textColor} ${textColorHover} cursor-pointer dark:
   <a title={title} class={linkClass} href={url} target={target} download={download}>
     <span class="px-4 py-5 w-full flex justify-between">
       <span class="text-sm">{title}</span>
-      <Icon name={icon} size={30} />
+      <Icon size={30} pack={iconPack} name={iconName} />
     </span>
   </a>
 </div>

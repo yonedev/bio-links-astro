@@ -1,9 +1,10 @@
 ---
-import type { Metadata } from '@utils/Interfaces'
+import type { Metadata, FooterData } from '@utils/Interfaces'
 
 interface Props {
   siteName: string
   metadata: Metadata
+  footerData: FooterData
   lang?: string
 }
 
@@ -11,7 +12,7 @@ import BaseHead from '@components/BaseHead.astro'
 import Footer from '@components/Footer.astro'
 
 import { getLangFromUrl } from '@i18n/utils'
-const { siteName, metadata, lang = getLangFromUrl(Astro.url) } = Astro.props
+const { siteName, metadata, footerData, lang = getLangFromUrl(Astro.url) } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@ const { siteName, metadata, lang = getLangFromUrl(Astro.url) } = Astro.props
   >
     <canvas id="matrix-background" class="hidden dark:block"></canvas>
     <slot />
-    <Footer siteName={siteName} />
+    <Footer siteName={siteName} footerData={footerData} />
 
     <style is:global>
       #matrix-background {

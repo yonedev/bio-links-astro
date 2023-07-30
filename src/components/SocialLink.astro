@@ -13,8 +13,6 @@ interface Props {
 // https://github.com/natemoo-re/astro-icon#readme
 import { Icon } from 'astro-icon'
 
-// TODO: Color default en config
-
 const {
   title,
   url,
@@ -27,7 +25,6 @@ const {
 } = Astro.props
 
 // TODO: No puedo componer clases Tailwind por eso mando hover:text-gray-600 en lugar de concatenar. Valorar en el futuro.
-
 const iconClass = `cursor-pointer text-gray-400 dark:text-neutral-300 fill-current ${iconHoverColor} ${iconHoverColorDark} cursor-pointer`
 ---
 

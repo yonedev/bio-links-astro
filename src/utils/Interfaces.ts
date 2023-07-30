@@ -23,6 +23,14 @@ export interface Metadata {
 }
 
 /**
+ * FooterData
+ */
+export interface FooterData {
+  creditLink?: string
+  creditText?: string
+}
+
+/**
  * SocialLink
  */
 export interface SocialLinkType {
@@ -40,7 +48,8 @@ export interface SocialLinkType {
 export interface LinkType {
   title: string
   url: string
-  icon: string
+  iconPack: string
+  iconName: string
   textColor?: string
   textColorHover?: string
   textColorHoverDark?: string

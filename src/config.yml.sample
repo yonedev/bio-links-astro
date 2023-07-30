@@ -17,15 +17,37 @@ metadata:
     site: '@yonedev'
     image: https://res.cloudinary.com/dcllw95id/images/v1689332981/yonedev/yonedev_portada_twitter_2023_links/yonedev_portada_twitter_2023_links.jpg?_i=AA
 
+#
+# Los elementos marcados como 'Opcional' se pueden dejar sin valor y se omitirán en el código HTML de la página
+#
 content:
   avatar: 'https://res.cloudinary.com/dcllw95id/images/v1689339453/yonedev/yonedev_cuadrada/yonedev_cuadrada.jpg?_i=AA'
+  # Opcional
   avatarDarkMode: 'https://res.cloudinary.com/dcllw95id/images/v1690548455/yonedev/Yonedev_matrix/Yonedev_matrix.jpg?_i=AA'
   title: Yoné Rocha
+  # Opcional
   titleDarkMode: Yonedev
+  # Opcional
   subtitle: '@yonedev'
+  # Opcional
   bio: 'Desarrollador de software freelance.<br />Creo software con pasión, ética, empatía y profesionalidad.<br />#ReactNative #Nuxt #Astro #Symfony #Docker'
+  # Opcional
   bioDarkMode: 'Si tomas la pastilla azul, fin de la historia. Despertarás en tu cama y creerás lo que quieras creerte. Si tomas la roja te quedarás en el país de las maravillas y yo te enseñaré hasta donde llega la madriguera de conejos. Recuerda, lo único que te ofrezco es la verdad, nada más.<br /><br />#ReactNative #Nuxt #Astro #Symfony #Docker'
+  footer:
+    # Opcional
+    creditLink: https://astro.build/
+    # Opcional
+    creditText: Powered by Astro
+  themeSwitch:
+    useSystemDarkMode: true
+    iconLightMode: 'ph:sun-fill'
+    iconDarkMode: 'ph:moon-fill'
+    # Opcional
+    buttonTextLightMode:
+    # Opcional
+    buttonTextDarkMode:
 
+# Referencia para buscar iconos: https://icon-sets.iconify.design/mdi/
 socialLinks:
   - title: Linkedin
     url: '#'
@@ -65,7 +87,8 @@ socialLinks:
 links:
   - title: 'Un enlace'
     url: '#'
-    icon: 'mdi:web'
+    iconPack: mdi
+    iconName: web
     # textColor: 'text-rose-600'
     # textColorHover: 'hover:text-rose-800'
     textColorHoverDark: 'dark:hover:text-green-800'
