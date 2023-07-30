@@ -1,0 +1,29 @@
+---
+import type { FooterData } from '@utils/Interfaces'
+
+interface Props {
+  siteName: string
+  footerData: FooterData
+}
+
+import ThemeSwitch from '@components/ThemeSwitch.astro'
+
+const { siteName, footerData } = Astro.props
+const current = new Date().getFullYear()
+---
+
+<footer>
+  <p class="flex-block max-w-xl p-4 md:pd-8 mx-auto text-center text-sm">
+    &copy; {current}&nbsp;{siteName}
+    {
+      footerData.creditLink && footerData.creditText && (
+        <a href={footerData.creditLink} target="_blank">
+          | {footerData.creditText}
+        </a>
+      )
+    }
+  </p>
+  <div class="flex-block max-w-xl pb-4 md:pd-8 mx-auto text-center text-sm">
+    <ThemeSwitch />
+  </div>
+</footer>

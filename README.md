@@ -9,6 +9,14 @@ Una versión DIY de Linktree, realizada con el framework Astro, para compartir r
    <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Tailwind+CSS&color=222222&logo=Tailwind+CSS&logoColor=06B6D4&label=" />&nbsp;&nbsp;
 </p>
 
+## 🆕 Configuración inicial para desplegar un proyecto
+
+- Realizar un fork del repositositorio. Eres libre de usarlo para aprender o para ponerlo en producción
+- Duplicar el archivo ./src/config/content.yml.sample como ./src/config/content.yml y editar el contenido según se deseé.
+- Duplicar el archivo ./.env.sample como ./.env y editar las variables de entorno.
+- Editar los datos de ./public/manifest.json
+- Personalizar los favicon que están en ./public/favicon
+
 ## 🧞 Comandos
 
 | Command                   | Action                               |

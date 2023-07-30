@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string
+  url: string
+  target?: string
+  iconPack: string
+  iconName: string
+  iconHoverColor?: string
+  iconHoverColorDark?: string
+  size?: string
+}
+
+// https://github.com/natemoo-re/astro-icon#readme
+import { Icon } from 'astro-icon'
+
+const {
+  title,
+  url,
+  target = '_blank',
+  iconPack,
+  iconName,
+  iconHoverColor = 'hover:text-gray-600',
+  iconHoverColorDark = 'dark:hover:text-gray-600',
+  size = 32
+} = Astro.props
+
+// TODO: No puedo componer clases Tailwind por eso mando hover:text-gray-600 en lugar de concatenar. Valorar en el futuro.
+const iconClass = `cursor-pointer text-gray-400 dark:text-neutral-300 fill-current ${iconHoverColor} ${iconHoverColorDark} cursor-pointer`
+---
+
+<a title={title} href={url} target={target} class={iconClass}>
+  <Icon size={size} pack={iconPack} name={iconName} />
+</a>
