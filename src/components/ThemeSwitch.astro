@@ -35,7 +35,9 @@ const containerClass = `flex items-center mx-auto ${themeSwitch.iconHoverColor}`
 
 <script>
   import content from '@content'
-  const themeSwitch = content.body.ThemeSwitch
+  const {
+    body: { themeSwitch }
+  } = content
 
   // Script se ejecuta al inicio de la carga de página poniendo el modo que corresponda
   const theme = (() => {
