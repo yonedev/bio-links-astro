@@ -86,6 +86,7 @@ socialLinks:
 
 links:
   - title: 'Un enlace'
+    # description: 'Esto es una prueba'
     url: '#'
     iconPack: mdi
     iconName: web
