@@ -48,6 +48,12 @@ const textClass = `px-4 w-full flex justify-between ${!description ? 'py-5' : 'p
       <span class="text-sm">{title}</span>
       <Icon size={30} pack={iconPack} name={iconName} />
     </span>
-    {description && <span class="px-10 pb-5 w-full text-xs flex text-gray-500">{description}</span>}
+    {
+      description && (
+        <span class="pl-8 pr-20 pb-5 w-full text-xs flex text-gray-500 dark:text-neutral-200">
+          {description}
+        </span>
+      )
+    }
   </a>
 </div>
