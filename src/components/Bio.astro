@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string
+  avatar: string
+  bio: string
+  titleDarkMode: string
+  avatarDarkMode: string
+  bioDarkMode: string
+  subtitle: string
+}
+
+const { title, avatar, bio, titleDarkMode, avatarDarkMode, bioDarkMode, subtitle } = Astro.props
+
+// Estilos condicionales a que exista contenido diferente en Dark Mode
+const avatarCss = avatarDarkMode ? 'dark:hidden' : ''
+const titleCss = titleDarkMode ? 'dark:hidden' : ''
+const bioCss =
+  'mt-2 max-w-2xl text-sm leading-5 text-gray-500 dark:text-neutral-400 ' +
+  (bioDarkMode ? 'dark:hidden' : '')
+---
+
+<div class="px-4 py-5 sm:px-6 flex flex-col items-center">
+  <div class="rounded-full h-40 w-40 overflow-hidden">
+    <img src={avatar} alt={title} class={avatarCss} />
+    {avatarDarkMode && <img src={avatarDarkMode} alt={title} class="hidden dark:block" />}
+  </div>
+  <div class="text-center dark:text-center">
+    <h1 class="text-xl leading-6 mt-4 font-bold text-gray-900 dark:text-neutral-50">
+      <span class={titleCss}>{title}</span>
+      {titleDarkMode && <span class="hidden dark:block">{titleDarkMode}</span>}
+    </h1>
+    {
+      subtitle && (
+        <h2 class="text-sm leading-6 text-gray-500 mt-2 dark:text-neutral-300 dark:hidden">
+          {subtitle}
+        </h2>
+      )
+    }
+
+    {bio && <p class={bioCss} set:html={bio} />}
+
+    {
+      bioDarkMode && (
+        <p
+          class="mt-3 max-w-2xl text-sm leading-5 text-gray-500 dark:text-neutral-400 hidden dark:block"
+          set:html={bioDarkMode}
+        />
+      )
+    }
+  </div>
+</div>

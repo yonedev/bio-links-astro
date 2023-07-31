@@ -47,6 +47,7 @@ export interface SocialLinkType {
  */
 export interface LinkType {
   title: string
+  description?: string
   url: string
   iconPack: string
   iconName: string
