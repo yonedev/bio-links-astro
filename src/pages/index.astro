@@ -4,7 +4,26 @@ import Base from '@layouts/Base.astro'
 import Bio from '@components/Bio.astro'
 import SocialLink from '@components/SocialLink.astro'
 import Link from '@components/Link.astro'
-import content from '@content'
+import content from '@content' // TODO: y si no lo creo?? debería dejar ejecutar la app
+
+let socialLinks: SocialLinkType[] = []
+let links: LinkType[] = []
+let body: [] = [] // TODO: falta por implementar en JSON el body y otros contenidos
+const { RESOURCES_FROM, JSON_REMOTE_DATA, JSONBIN_ACCESS_KEY } = import.meta.env
+if (RESOURCES_FROM === 'json') {
+  // Fetch en tiempo de compilación, si cambia el contenido hay que volver a desplegar el proyecto
+  const response = await fetch(JSON_REMOTE_DATA, {
+    headers: {
+      'X-Access-Key': JSONBIN_ACCESS_KEY
+    }
+  })
+  const data = await response.json()
+  socialLinks = data?.record?.socialLinks ?? []
+  links = data?.record?.links ?? []
+} else {
+  socialLinks = content?.socialLinks ?? []
+  links = content?.links ?? []
+}
 ---
 
 <Base siteName={content.site.name} metadata={content.metadata} footerData={content.body.footer}>
@@ -24,7 +43,7 @@ import content from '@content'
           <div class="mt-1 text-sm text-gray-900">
             <div class="mt-1 mb-1 space-x-4 flex justify-center">
               {
-                content.socialLinks.map((item: SocialLinkType) => (
+                socialLinks.map((item: SocialLinkType) => (
                   <SocialLink
                     title={item?.title}
                     url={item?.url}
@@ -40,7 +59,7 @@ import content from '@content'
         </div>
 
         {
-          content.links.map((item: LinkType) => (
+          links.map((item: LinkType) => (
             <Link
               title={item?.title}
               description={item?.description}
