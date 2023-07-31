@@ -32,3 +32,4 @@ Una versión DIY de Linktree, realizada con el framework Astro, para compartir r
 
 - Los enlaces se podrán alimentar desde una base de datos para facilitar la edición de personal no técnico.
 - Integración con Custom Post Type de Wordpress.
+- Añadir imágenes asociadas a los enlaces.
