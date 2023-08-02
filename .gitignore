@@ -22,3 +22,5 @@ pnpm-debug.log*
 
 # Custom
 src/config/content.yml
+cypress/screenshots/*
+cypress/videos/*
