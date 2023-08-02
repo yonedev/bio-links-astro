@@ -1,5 +1,6 @@
 site:
   name: Lorem ipsum
+  shortName: 'Links'
 
 # Default SEO metadata
 metadata:

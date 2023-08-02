@@ -9,6 +9,8 @@
       "@layouts/*": ["src/layouts/*"],
       "@i18n/*": ["src/i18n/*"],
       "@utils/*": ["src/utils/*"],
+      "@styles/*": ["src/assets/styles/*"],
+      "@favicons/*": ["src/assets/favicons/*"],
       "@content": ["src/config/content.yml"]
     }
   }

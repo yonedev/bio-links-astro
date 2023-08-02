@@ -1,5 +1,9 @@
 ---
 import type { Metadata, FooterData } from '@utils/Interfaces'
+import '@styles/base.css'
+import BaseHead from '@components/BaseHead.astro'
+import Footer from '@components/Footer.astro'
+import { getLangFromUrl } from '@i18n/utils'
 
 interface Props {
   siteName: string
@@ -8,10 +12,6 @@ interface Props {
   lang?: string
 }
 
-import BaseHead from '@components/BaseHead.astro'
-import Footer from '@components/Footer.astro'
-
-import { getLangFromUrl } from '@i18n/utils'
 const { siteName, metadata, footerData, lang = getLangFromUrl(Astro.url) } = Astro.props
 ---
 

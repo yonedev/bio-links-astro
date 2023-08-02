@@ -1,0 +1,14 @@
+---
+interface Props {
+  styles?: string
+}
+const { styles = ' ' } = Astro.props
+
+const allStyles = `flex-block max-w-xl p-4 md:pd-4 mx-auto mt-4 dark:mt-20 md:mt-4 ${styles}`
+---
+
+<div class={allStyles}>
+  <div class="bg-white shadow overflow-hidden rounded-lg dark:bg-neutral-900">
+    <slot />
+  </div>
+</div>
