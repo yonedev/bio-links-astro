@@ -35,3 +35,5 @@ Una versión DIY de Linktree, realizada con el framework Astro, para compartir r
 - Integración con Custom Post Type de Wordpress.
 - Añadir imágenes asociadas a los enlaces.
 - JSON remoto para todo el contenido
+- MD para links y contenido. Vincular con CMS VSCode MD
+- Test unitarios https://docs.astro.build/es/guides/testing/
