@@ -1,0 +1,24 @@
+---
+import Base from '@layouts/Base.astro'
+import Container from '@layouts/Container.astro'
+import content from '@content'
+---
+
+<Base siteName={content.site.name} metadata={content.metadata} footerData={content.body.footer}>
+  <Container styles="text-center ">
+    <h1 class="text-21xl leading-6 mt-4 font-bold text-gray-900 dark:text-neutral-50 pt-10">404</h1>
+
+    <p class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-neutral-300">
+      Oh!
+    </p>
+
+    <p class="mt-4 text-gray-500 dark:text-neutral-400">Página no encontrada.</p>
+
+    <a
+      href="/"
+      class="mt-10 mb-10 inline-block rounded bg-neutral-600 px-5 py-3 text-sm font-medium text-white hover:bg-neutral-700 focus:outline-none focus:ring"
+    >
+      Regresar
+    </a>
+  </Container>
+</Base>

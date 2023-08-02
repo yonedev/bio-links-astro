@@ -1,10 +1,13 @@
 ---
 import type { SocialLinkType, LinkType } from '@utils/Interfaces'
 import Base from '@layouts/Base.astro'
+import Container from '@layouts/Container.astro'
+import ContainerLinks from '@layouts/ContainerLinks.astro'
+import ContainerSocialLinks from '@layouts/ContainerSocialLinks.astro'
 import Bio from '@components/Bio.astro'
 import SocialLink from '@components/SocialLink.astro'
 import Link from '@components/Link.astro'
-import content from '@content' // TODO: y si no lo creo?? debería dejar ejecutar la app
+import content from '@content'
 
 let socialLinks: SocialLinkType[] = []
 let links: LinkType[] = []
@@ -27,55 +30,49 @@ if (RESOURCES_FROM === 'json') {
 ---
 
 <Base siteName={content.site.name} metadata={content.metadata} footerData={content.body.footer}>
-  <div class="flex-block max-w-xl p-4 md:pd-4 mx-auto mt-4 dark:mt-20 md:mt-4">
-    <div class="bg-white shadow overflow-hidden rounded-lg dark:bg-neutral-900">
-      <Bio
-        title={content.body.title}
-        avatar={content.body.avatar}
-        bio={content.body.bio}
-        titleDarkMode={content.body.titleDarkMode}
-        avatarDarkMode={content.body.avatarDarkMode}
-        bioDarkMode={content.body.bioDarkMode}
-        subtitle={content.body.subtitle}
-      />
-      <div class="border-t border-gray-200 dark:border-neutral-900">
-        <div class="bg-gray-200 px-4 py-5 w-full flex justify-center dark:bg-neutral-800">
-          <div class="mt-1 text-sm text-gray-900">
-            <div class="mt-1 mb-1 space-x-4 flex justify-center">
-              {
-                socialLinks.map((item: SocialLinkType) => (
-                  <SocialLink
-                    title={item?.title}
-                    url={item?.url}
-                    iconHoverColor={item?.iconHoverColor}
-                    iconHoverColorDark={item?.iconHoverColorDark}
-                    iconPack={item?.iconPack}
-                    iconName={item?.iconName}
-                  />
-                ))
-              }
-            </div>
-          </div>
-        </div>
-
+  <Container>
+    <Bio
+      title={content.body.title}
+      avatar={content.body.avatar}
+      bio={content.body.bio}
+      titleDarkMode={content.body.titleDarkMode}
+      avatarDarkMode={content.body.avatarDarkMode}
+      bioDarkMode={content.body.bioDarkMode}
+      subtitle={content.body.subtitle}
+    />
+    <ContainerLinks>
+      <ContainerSocialLinks>
         {
-          links.map((item: LinkType) => (
-            <Link
+          socialLinks.map((item: SocialLinkType) => (
+            <SocialLink
               title={item?.title}
-              description={item?.description}
               url={item?.url}
+              iconHoverColor={item?.iconHoverColor}
+              iconHoverColorDark={item?.iconHoverColorDark}
               iconPack={item?.iconPack}
               iconName={item?.iconName}
-              textColor={item?.textColor}
-              textColorHover={item?.textColorHover}
-              textColorHoverDark={item?.textColorHoverDark}
-              isFirstElement={item?.isFirstElement}
-              isLastElement={item?.isLastElement}
-              download={item?.download}
             />
           ))
         }
-      </div>
-    </div>
-  </div>
+      </ContainerSocialLinks>
+
+      {
+        links.map((item: LinkType) => (
+          <Link
+            title={item?.title}
+            description={item?.description}
+            url={item?.url}
+            iconPack={item?.iconPack}
+            iconName={item?.iconName}
+            textColor={item?.textColor}
+            textColorHover={item?.textColorHover}
+            textColorHoverDark={item?.textColorHoverDark}
+            isFirstElement={item?.isFirstElement}
+            isLastElement={item?.isLastElement}
+            download={item?.download}
+          />
+        ))
+      }
+    </ContainerLinks>
+  </Container>
 </Base>

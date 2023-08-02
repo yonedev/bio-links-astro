@@ -15,7 +15,7 @@ Una versión DIY de Linktree, realizada con el framework Astro, para compartir r
 - Duplicar el archivo ./src/config/content.yml.sample y renombrar a ./src/config/content.yml. Desde aquí podrás editar todo el contenido del sitio web. Existe la posibilidad de cargar contenido desde un JSON en remoto usando [JSONBin](https://jsonbin.io/), pero por ahora solo está implementado para los enlaces y falta el resto de contenido
 - Duplicar el archivo ./.env.sample y renombrar a ./.env. Hay unas cuantas variables de entorno para configurar tu proyecto. He desplegabo la app en [Cloudflare Pages](https://dash.cloudflare.com/) en ese caso se podría usar las variables de entorno del servicio y no crear un archivo .env.
 - Editar los datos de ./public/manifest.json
-- Personalizar los favicon que están en ./public/favicon/
+- Personalizar los favicon que están en ./src/assets/favicons/
 - [Pack de iconos.](https://icon-sets.iconify.design/mdi/)
 
 ## 🧞 Comandos
@@ -35,3 +35,5 @@ Una versión DIY de Linktree, realizada con el framework Astro, para compartir r
 - Integración con Custom Post Type de Wordpress.
 - Añadir imágenes asociadas a los enlaces.
 - JSON remoto para todo el contenido
+- MD para links y contenido. Vincular con CMS VSCode MD
+- Test unitarios https://docs.astro.build/es/guides/testing/
