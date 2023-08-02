@@ -11,7 +11,7 @@ export default defineConfig({
   },
   integrations: [
     tailwind({
-      applyBaseStyles: true
+      applyBaseStyles: false // a True carga los archivos base de tailwind sin tener que crear un base.css e importarlo en el layout
     })
   ]
 })
