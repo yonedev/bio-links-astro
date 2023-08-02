@@ -28,6 +28,7 @@ Una versión DIY de Linktree, realizada con el framework Astro, para compartir r
 | `npm run preview`         | Preview en local antes de desplegar  |
 | `npm run astro ...`       | Astro CLI `astro add`, `astro check` |
 | `npm run astro -- --help` | Ayuda Astro CLI                      |
+| `npx cypress run `        | Hacer test unitarios                 |
 
 ## ⚠️ TODO para futuras versiones
 
@@ -36,4 +37,3 @@ Una versión DIY de Linktree, realizada con el framework Astro, para compartir r
 - Añadir imágenes asociadas a los enlaces.
 - JSON remoto para todo el contenido
 - MD para links y contenido. Vincular con CMS VSCode MD
-- Test unitarios https://docs.astro.build/es/guides/testing/
