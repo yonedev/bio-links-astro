@@ -21,6 +21,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
   <meta name="title" content={metadata.title} />
   <meta name="description" content={metadata.description} />
   <link rel="canonical" href={canonicalURL} />
+  <link rel="sitemap" href="/sitemap-index.xml" />
 
   <!-- Global Metadata -->
   <meta name="google" content="notranslate" />
