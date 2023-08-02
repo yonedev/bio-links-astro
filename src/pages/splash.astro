@@ -1,0 +1,33 @@
+---
+import Favicons from '@components/Favicons.astro'
+import '@styles/base.css'
+import content from '@content'
+import icon512x512 from '@favicons/icon-512x512.png'
+import { getLangFromUrl } from '@i18n/utils'
+---
+
+<!DOCTYPE html>
+<html lang={getLangFromUrl(Astro.url)}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{content.metadata.title}.</title>
+    <Favicons />
+  </head>
+  <body class="bg-white flex items-center justify-center h-screen">
+    <div class="flex flex-col items-center">
+      <img class="logo w-48 h-48 mb-4" src={icon512x512} alt={content.site.name} />
+      <div class="animate-spin mt-8 rounded-full border-t-4 border-neutral-800 h-16 w-16"></div>
+    </div>
+    <script>
+      import content from '@content'
+      const {
+        site: { splashPageLoadingTime }
+      } = content
+      setTimeout(function () {
+        window.location.href = '/'
+      }, splashPageLoadingTime)
+    </script>
+  </body>
+</html>
