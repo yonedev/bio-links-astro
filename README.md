@@ -11,12 +11,13 @@ Una versión DIY de Linktree, realizada con el framework Astro, para compartir r
 
 ## 🆕 Configuración inicial para desplegar un proyecto
 
-- Realizar un fork del repositositorio.
-- Duplicar el archivo ./src/config/content.yml.sample y renombrar a ./src/config/content.yml. Desde aquí podrás editar todo el contenido del sitio web. Existe la posibilidad de cargar contenido desde un JSON en remoto usando [JSONBin](https://jsonbin.io/), pero por ahora solo está implementado para los enlaces y falta el resto de contenido
-- Duplicar el archivo ./.env.sample y renombrar a ./.env. Hay unas cuantas variables de entorno para configurar tu proyecto. He desplegabo la app en [Cloudflare Pages](https://dash.cloudflare.com/) en ese caso se podría usar las variables de entorno del servicio y no crear un archivo .env.
-- Editar los datos de ./public/manifest.json
-- Personalizar los favicon que están en ./src/assets/favicons/
-- [Pack de iconos.](https://icon-sets.iconify.design/mdi/)
+- Crear un nuevo repositio usando el repositorio plantilla [bio-links-astro](https://github.com/yonedev/bio-links-astro).
+- Llevar el repositorio a tu equipo y realizar `npm install`.
+- Duplicar el archivo `./src/config/content.yml.sample` y renombrar a `./src/config/content.yml`. Desde aquí podrás editar todo el contenido del sitio web. Existe la posibilidad de cargar contenido desde un JSON en remoto usando [JSONBin](https://jsonbin.io/), pero por ahora solo está implementado para los enlaces y falta el resto de contenido.
+- Duplicar el archivo `./.env.sample` y renombrar a `./.env`. Hay unas cuantas variables de entorno para configurar tu proyecto. En mi caso he desplegabo la app en [Cloudflare Pages](https://dash.cloudflare.com/) en donde se podrá usar las variables de entorno del servicio y no crear un archivo .env.
+- Editar `.gitignore` para que se pueda añadir a tu repo el archivo `.env` y `src/config/content.yml`. Una vez añadidos los cambios, se puede revertir el `.gitignore`.
+- Realiza la personalización de los favicons que se encuentran en la ruta `./src/assets/favicons/` al agregar un favicon por cada archivo que posea la extensión `.sample`. Asegúrate de eliminar dicha extensión en el proceso.
+- Ya puedes iniciar el servidor `npm run dev`.
 
 ## 🧞 Comandos
 
@@ -29,6 +30,10 @@ Una versión DIY de Linktree, realizada con el framework Astro, para compartir r
 | `npm run astro ...`       | Astro CLI `astro add`, `astro check` |
 | `npm run astro -- --help` | Ayuda Astro CLI                      |
 | `npx cypress run `        | Hacer test unitarios                 |
+
+## 👷🏻‍♂️ Recursos
+
+- [Pack de iconos.](https://icon-sets.iconify.design/mdi/)
 
 ## ⚠️ TODO para futuras versiones
 
