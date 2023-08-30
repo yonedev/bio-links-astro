@@ -22,5 +22,7 @@ pnpm-debug.log*
 
 # Custom
 src/config/content.yml
+src/assets/favicons/*
+!src/assets/favicons/*.sample
 cypress/screenshots/*
 cypress/videos/*
